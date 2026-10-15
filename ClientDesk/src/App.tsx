@@ -66,6 +66,9 @@ function App() {
 
   const activeCount = clients.filter((client) => client.status === "Active").length;
   const leadCount = clients.filter((client) => client.status === "Lead").length;
+  const completedCount = clients.filter(
+  (client) => client.status === "Completed"
+).length;
 
   return (
     <main className="app-container">
@@ -98,6 +101,11 @@ function App() {
             <span className="stat-label">Leads</span>
             <strong>{leadCount}</strong>
             <span className="stat-note">Potential clients</span>
+          </article>
+          <article className="stat-card">
+            <span className="stat-label">Completed</span>
+            <strong>{completedCount}</strong>
+            <span className="stat-note">Projects completed</span>
           </article>
         </section>
 
